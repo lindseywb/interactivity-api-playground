@@ -12,14 +12,20 @@
 
 // Generate unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
+
+$heading = $attributes['heading'];
 ?>
 
 <div
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive="create-block"
-	data-wp-context='{ "isOpen": false }'
-	data-wp-watch="callbacks.logIsOpen"
+	data-wp-context='{ "isInView": false }'
+	data-wp-on--scroll="actions.updateIsInView"
 >
+	<div class="promo-box"
+		data-wp-watch="callbacks.logIsInView">
+		<h2><?php echo $heading; ?></h2>
+	</div>
 	<button
 		data-wp-on--click="actions.toggle"
 		data-wp-bind--aria-expanded="context.isOpen"
@@ -30,7 +36,7 @@ $unique_id = wp_unique_id( 'p-' );
 
 	<p
 		id="<?php echo esc_attr( $unique_id ); ?>"
-		data-wp-bind--hidden="!context.isOpen"
+		data-wp-bind--hidden="!context.isInView"
 	>
 		<?php
 			esc_html_e( 'My First Interactive Block - hello from an interactive block!', 'my-first-interactive-block' );

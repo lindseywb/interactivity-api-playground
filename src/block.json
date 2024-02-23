@@ -11,6 +11,12 @@
 	"supports": {
 		"interactivity": true
 	},
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"default": "Hello World"
+		}
+	},
 	"textdomain": "my-first-interactive-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
