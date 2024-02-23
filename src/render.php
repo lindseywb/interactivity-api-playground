@@ -28,7 +28,7 @@ $summary = $attributes['summary'];
 		data-wp-bind--aria-expanded="context.isOpen"
 		aria-controls="<?php echo esc_attr( $unique_id ); ?>"
 	>
-		<?php esc_html_e( 'Toggle', 'my-first-interactive-block' ); ?>
+		<?php esc_html_e( 'Toggle Popup', 'my-first-interactive-block' ); ?>
 	</button>
 
 	<div
@@ -36,9 +36,11 @@ $summary = $attributes['summary'];
 		data-wp-bind--hidden="!context.isOpen"
 		class="popup"
 	>
-		<h2><?php echo $heading; ?></h2>
-		<p><?php echo $summary; ?></p>
+		<div>
+			<h2><?php echo $heading; ?></h2>
+			<p><?php echo $summary; ?></p>
 
-		<button class="button" data-wp-on--click="actions.close">Close</button>
+			<button class="button btn-close" data-wp-on--click="actions.close">Close</button>
+		</div>
 	</div>
 </div>
