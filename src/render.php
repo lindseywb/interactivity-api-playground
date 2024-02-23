@@ -12,6 +12,9 @@
 
 // Generate unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
+
+$heading = $attributes['heading'];
+$summary = $attributes['summary'];
 ?>
 
 <div
@@ -28,12 +31,14 @@ $unique_id = wp_unique_id( 'p-' );
 		<?php esc_html_e( 'Toggle', 'my-first-interactive-block' ); ?>
 	</button>
 
-	<p
+	<div
 		id="<?php echo esc_attr( $unique_id ); ?>"
 		data-wp-bind--hidden="!context.isOpen"
+		class="popup"
 	>
-		<?php
-			esc_html_e( 'My First Interactive Block - hello from an interactive block!', 'my-first-interactive-block' );
-		?>
-	</p>
+		<h2><?php echo $heading; ?></h2>
+		<p><?php echo $summary; ?></p>
+
+		<button class="button" data-wp-on--click="actions.close">Close</button>
+	</div>
 </div>

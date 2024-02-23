@@ -9,6 +9,10 @@ store( 'create-block', {
 			const context = getContext();
 			context.isOpen = ! context.isOpen;
 		},
+		close: () => {
+			const context = getContext();
+			context.isOpen = false;
+		},
 	},
 	callbacks: {
 		logIsOpen: () => {

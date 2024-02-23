@@ -11,6 +11,14 @@
 	"supports": {
 		"interactivity": true
 	},
+	"attributes": {
+        "popup_heading": {
+			"type": "string"
+		},
+		"popup_summary": {
+			"type": "string"
+		}
+    },
 	"textdomain": "my-first-interactive-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

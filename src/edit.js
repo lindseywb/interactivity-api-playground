@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -29,11 +29,21 @@ export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
 
 	return (
-		<p { ...blockProps }>
-			{ __(
-				'My First Interactive Block – hello from the editor!',
-				'my-first-interactive-block'
-			) }
-		</p>
+		<div { ...blockProps }>
+			<RichText
+				tagName='h2'
+				allowedFormats={[]}
+				value={attributes.heading}
+				onChange={(heading) => setAttributes({heading})}
+				placeholder='Heading Text'
+			/>
+			<RichText
+				tagName='p'
+				allowedFormats={[]}
+				value={attributes.summary}
+				onChange={(summary) => setAttributes({summary})}
+				placeholder='Summary text'
+			/>
+		</div>
 	);
 }

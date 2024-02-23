@@ -6,7 +6,16 @@
  */
 
 .wp-block-create-block-my-first-interactive-block {
-	font-size: 1em;
-	background: #ffff001a;
-	padding: 1em;
+
+	.popup {
+		position: absolute;
+		background-color: #999;
+		color: #fff;
+		max-width: 480px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		padding: 2rem;
+		z-index: 99;
+	}
 }
