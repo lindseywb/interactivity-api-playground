@@ -13,8 +13,8 @@
 // Generate unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
 
-$heading = $attributes['heading'];
-$summary = $attributes['summary'];
+$heading = $attributes['popup_heading'];
+$summary = $attributes['popup_summary'];
 ?>
 
 <div
