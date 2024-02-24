@@ -10,30 +10,17 @@
  * @see https://github.com/WordPress/gutenberg/blob/trunk/docs/reference-guides/block-api/block-metadata.md#render
  */
 
-// Generate unique id for aria-controls.
-$unique_id = wp_unique_id( 'p-' );
 ?>
 
 <div
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive="create-block"
-	data-wp-context='{ "isOpen": false }'
-	data-wp-watch="callbacks.logIsOpen"
+	data-wp-context='{ "days": 0, "currentDate": "-" }'
+	data-wp-init="callbacks.logTimeInit"
+	data-wp-watch="callbacks.getDaysUntilChristmas"
 >
-	<button
-		data-wp-on--click="actions.toggle"
-		data-wp-bind--aria-expanded="context.isOpen"
-		aria-controls="<?php echo esc_attr( $unique_id ); ?>"
-	>
-		<?php esc_html_e( 'Toggle', 'my-first-interactive-block' ); ?>
-	</button>
+	<h2>How long until Christmas?</h2>
+	<p>Current Date: <span data-wp-text="context.currentDate"></span></p>
+	<p>Days until Christmas: <span data-wp-text="context.days"></span></p>
 
-	<p
-		id="<?php echo esc_attr( $unique_id ); ?>"
-		data-wp-bind--hidden="!context.isOpen"
-	>
-		<?php
-			esc_html_e( 'My First Interactive Block - hello from an interactive block!', 'my-first-interactive-block' );
-		?>
-	</p>
 </div>

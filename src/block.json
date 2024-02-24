@@ -11,6 +11,12 @@
 	"supports": {
 		"interactivity": true
 	},
+	"attributes": {
+		"date": {
+			"type": "string",
+			"default": "01-01-2080"
+		}
+	},
 	"textdomain": "my-first-interactive-block",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",

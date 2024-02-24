@@ -4,17 +4,24 @@
 import { store, getContext } from '@wordpress/interactivity';
 
 store( 'create-block', {
-	actions: {
-		toggle: () => {
-			const context = getContext();
-			context.isOpen = ! context.isOpen;
-		},
-	},
+	// actions: {
+
+	// },
 	callbacks: {
-		logIsOpen: () => {
-			const { isOpen } = getContext();
-			// Log the value of `isOpen` each time it changes.
-			console.log( `Is open: ${ isOpen }` );
+		logTimeInit: () => {
+
+			const todaysDate = new Date();
+			const christmas = new Date( todaysDate.getFullYear(), 11, 25 );
+			const context = getContext();
+			const daysUntilChristmas = Math.ceil( ( christmas - todaysDate ) / ( 1000 * 60 * 60 * 24 ) )
+
+			context.currentDate = todaysDate.toLocaleString();
+			context.days = daysUntilChristmas;
+		},
+		getDaysUntilChristmas: () => {
+			const context = getContext();
+			// context.isOpen = ! context.isOpen;
+			console.log('daysuntilchristmas', context.days)
 		},
 	},
 } );
