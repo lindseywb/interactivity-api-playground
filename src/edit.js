@@ -33,15 +33,15 @@ export default function Edit( { attributes, setAttributes } ) {
 			<RichText
 				tagName='h2'
 				allowedFormats={[]}
-				value={attributes.heading}
-				onChange={(heading) => setAttributes({heading})}
+				value={attributes.popup_heading}
+				onChange={(popup_heading) => setAttributes({popup_heading})}
 				placeholder='Heading Text'
 			/>
 			<RichText
 				tagName='p'
 				allowedFormats={[]}
-				value={attributes.summary}
-				onChange={(summary) => setAttributes({summary})}
+				value={attributes.popup_summary}
+				onChange={(popup_summary) => setAttributes({popup_summary})}
 				placeholder='Summary text'
 			/>
 		</div>
