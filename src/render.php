@@ -20,10 +20,9 @@ $heading = $attributes['heading'];
 	<?php echo get_block_wrapper_attributes(); ?>
 	data-wp-interactive="create-block"
 	data-wp-context='{ "isInView": false }'
-	data-wp-on--scroll="actions.updateIsInView"
+	data-wp-on-document--scroll="actions.updateIsInView"
 >
-	<div class="promo-box"
-		data-wp-watch="callbacks.logIsInView">
+	<div class="promo-box">
 		<h2><?php echo $heading; ?></h2>
 	</div>
 	<button
