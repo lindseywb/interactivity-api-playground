@@ -12,6 +12,8 @@
 
 // Generate unique id for aria-controls.
 $unique_id = wp_unique_id( 'p-' );
+
+// var_dump($block);
 ?>
 
 <div
@@ -28,12 +30,41 @@ $unique_id = wp_unique_id( 'p-' );
 		<?php esc_html_e( 'Toggle', 'my-first-interactive-block' ); ?>
 	</button>
 
-	<p
-		id="<?php echo esc_attr( $unique_id ); ?>"
-		data-wp-bind--hidden="!context.isOpen"
-	>
-		<?php
-			esc_html_e( 'My First Interactive Block - hello from an interactive block!', 'my-first-interactive-block' );
-		?>
-	</p>
+	<div class="slider-container">
+		<div class="slide">
+			<h2>Slide 1</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Slide text</p>
+		</div>
+		<div class="slide">
+			<h2>Slide 2</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Slide text</p>
+		</div>
+		<div class="slide">
+			<h2>Slide 3</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Slide text here</p>
+		</div>
+		<div class="slide">
+			<h2>Slide 4</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Text goes here</p>
+		</div>
+		<div class="slide">
+			<h2>Slide 5</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Slide text</p>
+		</div>
+		<div class="slide">
+			<h2>Slide 6</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Slide text</p>
+		</div>
+		<div class="slide">
+			<h2>Slide 7</h2>
+			<img src="https://placehold.co/600x400" alt="">
+			<p>Slide Text</p>
+		</div>
+	</div>
 </div>
